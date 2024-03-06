@@ -166,7 +166,6 @@ void Start(Board* B, Tiles* T, int size=25){
     c3.pos = &cat3.Position;
     mainList.push_back(c3);
 
-    
     element m1;
     Mouse mouse1 = Mouse(size/2 -sqrt(size)/2, "female");
     m1.mouse = &mouse1;
@@ -189,7 +188,7 @@ void Start(Board* B, Tiles* T, int size=25){
     mainList.push_back(mz);
 
     place_elements(B, T, size);
-    B->display(T, size); //Sleep(2000);
+    B->display(T, size); sleep(2);
 
 
     /*A continuous loop that will stop only when condition(s) of gameover is/are fulfilled*/
@@ -233,7 +232,7 @@ void Start(Board* B, Tiles* T, int size=25){
 
         B->display(T, size);
         
-        // Sleep(1500);
+        sleep(1.5);
         
         if (game_over) break;
 
@@ -243,7 +242,7 @@ void Start(Board* B, Tiles* T, int size=25){
 
         B->display(T, size);
 
-        // Sleep(1500);
+        sleep(1.5);
       
     } while (not game_over);
 

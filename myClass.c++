@@ -9,7 +9,7 @@ class Tiles{ // a tile able to contain 2 characters ( representing entities )
 class Entity{
     public:
 
-    int ID=0;  
+    int ID=0;
     int Reference;
     int Position;
     char Character;
@@ -136,11 +136,11 @@ class Cat: public Entity{
 
     void setSex(string sex){
         Sex = sex;
-        if (sex == "male"){ 
+        if (sex == "male"){
             Reference = 10;
             Character = 'C';
         }
-        else{ 
+        else{
             Reference = 11;
             Character = 'c';
         }
@@ -148,9 +148,9 @@ class Cat: public Entity{
     string getSex(){
         return Sex;
     }
-    
+
     void move(int size){
-        int i = rand()%5+1; 
+        int i = rand()%5+1;
         int sq = sqrt(size);
 
         PrevPosition = Position;
@@ -161,14 +161,13 @@ class Cat: public Entity{
         else Position -= 1;
 
         if (((Position>size)||(Position<1))||(((PrevPosition%sq == 0)&&(Position%sq == 1))||((PrevPosition%sq == 1)&&(Position%sq == 0)))) {
-            Delete();    
-             
+            Delete();
         }
 
         Energy -=1;
 
         if (Energy <1)
-            Delete();         
+            Delete();
     }
 
     void setOnTile(Tiles* T,int size){
@@ -242,3 +241,4 @@ class Board{
         horizontalRule(sqrt(size));
     }
 };
+
